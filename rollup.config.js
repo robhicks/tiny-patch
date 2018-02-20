@@ -1,31 +1,31 @@
 const buble = require('rollup-plugin-buble');
 const uglify = require('rollup-plugin-uglify');
 const uglifyEs = require('rollup-plugin-uglify-es');
-let input = 'src/index.js';
+let input = 'src/tiny-patch.mjs';
 
 export default [
   {
 		input,
 		plugins: [buble()],
-    name: 'SUtils',
     output: {
-      file: 'dist/s-utilities.iife.js',
+      name: 'TinyPatch',
+      file: 'dist/tiny-patch.iife.js',
       format: 'iife'
     }
   },
   {
 		input,
 		plugins: [buble(), uglify()],
-    name: 'SUtils',
     output: {
-      file: 'dist/s-utilities.iife.min.js',
+      name: 'TinyPatch',
+      file: 'dist/tiny-patch.iife.min.js',
       format: 'iife'
     }
   },
 	{
 		input,
     output: {
-      file: 'dist/s-utilities.mjs',
+      file: 'dist/tiny-patch.mjs',
       format: 'es'
     }
   },
@@ -33,7 +33,7 @@ export default [
 		input,
     plugins: [uglifyEs()],
     output: {
-      file: 'dist/s-utilities.min.mjs',
+      file: 'dist/tiny-patch.min.mjs',
       format: 'es'
     }
   },

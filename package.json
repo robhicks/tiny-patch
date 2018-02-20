@@ -16,5 +16,8 @@
     "sinon": "^4.2.1",
     "sinon-chai": "^2.14.0",
     "static-server": "^3.0.0"
+  },
+  "scripts": {
+    "build": "rollup -cw"
   }
 }
